@@ -26,3 +26,18 @@ export function createElement(name, props = {}, ...children) {
 
   return element;
 }
+
+/**
+ * Получение слово "раз" в правильной форме в зависимости от числительного
+ * @param count {Number} Количество выделений
+ * @returns {String} 
+ */
+export function getPlural(count) {
+  const lastDigit = count % 10;
+  const preLastDigit = Math.trunc(count / 10) % 10;
+  console.log(preLastDigit);
+  if([2, 3, 4].indexOf(lastDigit) !== -1 && preLastDigit !== 1) {
+    return "раза";
+  }
+  return "раз";
+}
