@@ -1,12 +1,5 @@
 .Item {
   display: flex;
-  justify-content: flex-start;
-  transition: background-color 1s;
-}
-
-.Item_selected {
-  background: #75aaf1;
-  color: #fff;
 }
 
 .Item-code {
@@ -14,12 +7,29 @@
 }
 
 .Item-title {
-  width: 100%;
   padding: 20px 10px;
+  flex-grow: 1;
+}
+
+.Item-price {
+  font-size: 19px;
+  align-content: center;
+  color: rgb(51, 51, 51);
+  margin-right: 20px;
+}
+
+.Item-ammount {
+  font-size: 19px;
+  align-content: center;
+  color: rgb(51, 51, 51);
+  margin-right: 20px;
+  margin-left: 40px;
 }
 
 .Item-actions {
-  display: flex;
-  justify-content: flex-end;
   padding: 20px 20px 20px 10px;
+}
+
+.Item-actions button {
+  width: 75px;
 }

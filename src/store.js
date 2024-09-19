@@ -1,5 +1,3 @@
-import { generateCode } from './utils';
-
 /**
  * Хранилище состояния приложения
  */
@@ -40,47 +38,35 @@ class Store {
     for (const listener of this.listeners) listener();
   }
 
-  /**
-   * Добавление новой записи
-   */
-  addItem() {
+  addProduct(code) {
+    let cart;
+
+    if (this.state.cart.some(product => product.code === code)) {
+      cart = this.state.cart.map(product =>
+        product.code === code ? { ...product, ammount: product.ammount + 1 } : product,
+      );
+    } else {
+      const product = this.state.list.find(item => item.code === code);
+      cart = [...this.state.cart, { ...product, ammount: 1 }];
+    }
+
     this.setState({
       ...this.state,
-      list: [...this.state.list, { code: generateCode(), title: 'Новая запись' }],
+      cart,
     });
   }
 
-  /**
-   * Удаление записи по коду
-   * @param code
-   */
-  deleteItem(code) {
+  removeProduct(code) {
     this.setState({
       ...this.state,
-      // Новый список, в котором не будет удаляемой записи
-      list: this.state.list.filter(item => item.code !== code),
+      cart: this.state.cart.filter(product => product.code !== code),
     });
   }
 
-  /**
-   * Выделение записи по коду
-   * @param code
-   */
-  selectItem(code) {
+  setCartVisibility(isCartOpen) {
     this.setState({
       ...this.state,
-      list: this.state.list.map(item => {
-        if (item.code === code) {
-          // Смена выделения и подсчёт
-          return {
-            ...item,
-            selected: !item.selected,
-            count: item.selected ? item.count : item.count + 1 || 1,
-          };
-        }
-        // Сброс выделения если выделена
-        return item.selected ? { ...item, selected: false } : item;
-      }),
+      isCartOpen,
     });
   }
 }

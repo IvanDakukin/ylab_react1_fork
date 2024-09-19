@@ -1,0 +1,24 @@
+.CartWindow {
+	margin-bottom: 80px;
+}
+
+.CartWindow-body {
+	margin-top: 60px;
+	border-top: 1px dashed #ccc;
+}
+
+.CartWindow-footer {
+	font-weight: bold;
+	margin: 20px 0;
+	font-size: 18px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.CartWindow-sum {
+	margin-right: 125px;
+}
+
+.CartWindow-label {
+	margin-right: 60px;
+}
