@@ -2,6 +2,11 @@
 	margin-bottom: 80px;
 }
 
+.CartWindow-head {
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+
 .CartWindow-body {
 	margin-top: 60px;
 	border-top: 1px dashed #ccc;
