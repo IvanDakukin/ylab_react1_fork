@@ -12,24 +12,24 @@
 }
 
 .Item-price {
-  font-size: 19px;
+  font-size: 18px;
   align-content: center;
-  color: rgb(51, 51, 51);
-  margin-right: 20px;
+  color: #404040;
 }
 
 .Item-ammount {
-  font-size: 19px;
+  font-size: 18px;
   align-content: center;
-  color: rgb(51, 51, 51);
-  margin-right: 20px;
-  margin-left: 40px;
+  color: #404040;
+  margin-left: 62px;
 }
 
 .Item-actions {
   padding: 20px 20px 20px 10px;
+  margin-left: 14px;
 }
 
 .Item-actions button {
-  width: 75px;
+  width: 76px;
+    font-size: 13px;
 }

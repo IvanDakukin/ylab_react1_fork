@@ -5,11 +5,7 @@
 .CartWindow-head {
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
-}
-
-.CartWindow-body {
-	margin-top: 60px;
-	border-top: 1px dashed #ccc;
+	margin-bottom: 70px;
 }
 
 .CartWindow-footer {
@@ -21,9 +17,9 @@
 }
 
 .CartWindow-sum {
-	margin-right: 125px;
+	margin-right: 120px;
 }
 
 .CartWindow-label {
-	margin-right: 60px;
+	margin-right: 53px;
 }
