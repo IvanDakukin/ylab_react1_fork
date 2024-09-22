@@ -1,22 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import List from '../list';
 import Head from '../head';
 import Modal from '../modal';
-import CartTotal from '../cart-total';
 import CartItem from '../cart-item';
 import { cn as bem } from '@bem-react/classname';
 import './style.css';
+import CartBody from '../cart-body';
 
 function CartWindow(props) {
   const cn = bem('CartWindow');
   const productsSum = props.cart.reduce((sum, product) => sum + product.price * product.ammount, 0);
-
-  const callbacks = {
-    createCartItem(item) {
-      return <CartItem item={item} onButtonClick={props.onRemoveProduct} />;
-    },
-  };
 
   return (
     <Modal>
@@ -31,15 +24,11 @@ function CartWindow(props) {
             }
           />
         </div>
-
-        {props.cart.length ? (
-          <div className={cn('body')}>
-            <List list={props.cart} createItem={callbacks.createCartItem} />
-            <CartTotal total={productsSum}></CartTotal>
-          </div>
-        ) : (
-          <div className={cn('body', { empty: true })}>Корзина пуста</div>
-        )}
+        <CartBody
+          productsSum={productsSum}
+          onRemoveProduct={props.onRemoveProduct}
+          cart={props.cart}
+        />
       </div>
     </Modal>
   );
