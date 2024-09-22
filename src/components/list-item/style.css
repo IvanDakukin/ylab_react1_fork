@@ -1,0 +1,35 @@
+.ListItem {
+	display: flex;
+}
+
+.ListItem-code {
+	padding: 20px 10px 20px 20px;
+}
+
+.ListItem-title {
+	padding: 20px 10px;
+	flex-grow: 1;
+}
+
+.ListItem-price {
+	font-size: 18px;
+	align-content: center;
+	color: #404040;
+}
+
+.ListItem-ammount {
+	font-size: 18px;
+	align-content: center;
+	color: #404040;
+	margin-left: 62px;
+}
+
+.ListItem-actions {
+	padding: 20px 20px 20px 10px;
+	margin-left: 14px;
+}
+
+.ListItem-actions button {
+	width: 76px;
+	font-size: 13px;
+}

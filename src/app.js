@@ -4,6 +4,7 @@ import CartSummary from './components/cart-summary';
 import Head from './components/head';
 import PageLayout from './components/page-layout';
 import CartWindow from './components/cart-window';
+import ListItem from './components/list-item';
 
 /**
  * Приложение
@@ -35,6 +36,10 @@ function App({ store }) {
     onCloseCart: useCallback(() => {
       store.setCartVisibility(false);
     }, [store]),
+
+    createListItem: item => {
+      return <ListItem item={item} onButtonClick={callbacks.onAddProduct}></ListItem>;
+    },
   };
 
   return (
@@ -48,7 +53,7 @@ function App({ store }) {
         />
       )}
       <CartSummary cart={cart} onOpenCart={callbacks.onOpenCart} />
-      <List list={list} onButtonClick={callbacks.onAddProduct} buttonText="Добавить" />
+      <List list={list} createItem={callbacks.createListItem} />
     </PageLayout>
   );
 }

@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cn as bem } from '@bem-react/classname';
-import Item from '../item';
 import './style.css';
 
-function List({ list, onButtonClick, buttonText }) {
+function List(props) {
   const cn = bem('List');
+
   return (
     <div className={cn()}>
-      {list.map(item => (
+      {props.list.map(item => (
         <div key={item.code} className={cn('item')}>
-          <Item item={item} onButtonClick={onButtonClick} buttonText={buttonText} />
+          {props.createItem(item)}
         </div>
       ))}
     </div>
@@ -25,8 +25,6 @@ List.propTypes = {
       price: PropTypes.number,
     }),
   ).isRequired,
-  onButtonClick: PropTypes.func.isRequired,
-  buttonText: PropTypes.string.isRequired,
 };
 
 export default React.memo(List);

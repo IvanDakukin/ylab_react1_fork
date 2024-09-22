@@ -1,0 +1,35 @@
+.CartItem {
+	display: flex;
+}
+
+.CartItem-code {
+	padding: 20px 10px 20px 20px;
+}
+
+.CartItem-title {
+	padding: 20px 10px;
+	flex-grow: 1;
+}
+
+.CartItem-price {
+	font-size: 18px;
+	align-content: center;
+	color: #404040;
+}
+
+.CartItem-ammount {
+	font-size: 18px;
+	align-content: center;
+	color: #404040;
+	margin-left: 62px;
+}
+
+.CartItem-actions {
+	padding: 20px 20px 20px 10px;
+	margin-left: 14px;
+}
+
+.CartItem-actions button {
+	width: 76px;
+	font-size: 13px;
+}
