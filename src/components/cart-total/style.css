@@ -1,0 +1,15 @@
+.CartTotal {
+	font-weight: bold;
+	margin: 20px 0;
+	font-size: 18px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.CartTotal-sum {
+	margin-right: 120px;
+}
+
+.CartTotal-label {
+	margin-right: 53px;
+}

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import List from '../list';
 import Head from '../head';
 import Modal from '../modal';
+import CartTotal from '../cart-total';
 import { cn as bem } from '@bem-react/classname';
 import './style.css';
 
@@ -23,15 +24,15 @@ function CartWindow({ cart, onRemoveProduct, onCloseCart }) {
             }
           />
         </div>
-        <div className={cn('body')}>
-          <List list={cart} onButtonClick={onRemoveProduct} buttonText="Удалить" />
-        </div>
-        <div className={cn('footer')}>
-          <div className={cn('label')}>Итого:</div>
-          <div className={cn('sum')}>
-            {new Intl.NumberFormat('ru-RU').format(productsSum) + ' ₽'}
+
+        {cart.length ? (
+          <div className={cn('body')}>
+            <List list={cart} onButtonClick={onRemoveProduct} buttonText="Удалить" />
+            <CartTotal total={productsSum}></CartTotal>
           </div>
-        </div>
+        ) : (
+          <div className={cn('body', { empty: true })}>Корзина пуста</div>
+        )}
       </div>
     </Modal>
   );

@@ -1,5 +1,12 @@
 .CartWindow {
-	margin-bottom: 80px;
+	max-height: 90vh;
+	overflow-y: auto;
+	padding-bottom: 90px;
+}
+
+.CartWindow-body_empty {
+	text-align: center;
+	
 }
 
 .CartWindow-head {
@@ -8,18 +15,7 @@
 	margin-bottom: 70px;
 }
 
-.CartWindow-footer {
-	font-weight: bold;
-	margin: 20px 0;
+.CartWindow-empty {
+	text-align: center;
 	font-size: 18px;
-	display: flex;
-	justify-content: flex-end;
-}
-
-.CartWindow-sum {
-	margin-right: 120px;
-}
-
-.CartWindow-label {
-	margin-right: 53px;
 }
