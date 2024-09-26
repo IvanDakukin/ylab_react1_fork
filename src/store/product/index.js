@@ -20,6 +20,13 @@ class Product extends StoreModule {
       'Получен товар из АПИ',
     );
   }
+
+  clear() {
+    this.setState({
+      ...this.getState(),
+      product: {},
+    });
+  }
 }
 
 export default Product;

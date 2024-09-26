@@ -2,6 +2,10 @@
 	padding: 40px;
 }
 
+.ProductContent-description {
+	line-height: 20px;
+}
+
 .ProductContent * {
 	margin-bottom: 20px;
 }

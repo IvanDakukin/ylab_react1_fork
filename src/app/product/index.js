@@ -14,6 +14,9 @@ function Product() {
   useEffect(() => {
     store.actions.product.load(id);
     store.actions.modals.close();
+    return (() => {
+      store.actions.product.clear();
+    })
   }, [id]);
 
   const select = useSelector(state => ({
@@ -30,7 +33,7 @@ function Product() {
 
   return (
     <PageLayout>
-      <Head title="Название товара" />
+      <Head title={select.product.title} />
       <BasketTool onOpen={callbacks.openModalBasket} amount={select.amount} sum={select.sum} />
       <ProductContent product={select.product} onAdd={callbacks.addProduct}/>
     </PageLayout>
