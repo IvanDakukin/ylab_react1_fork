@@ -19,8 +19,8 @@ function PageButton(props) {
 
 PageButton.propTypes = {
   onClick: PropTypes.func.isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  isCurrent: PropTypes.bool.isRequired,
+  number: PropTypes.oneOfType([PropTypes.any, PropTypes.number]), 
+  isSelected: PropTypes.bool.isRequired,
 };
 
 export default memo(PageButton);

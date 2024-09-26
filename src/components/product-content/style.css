@@ -1,0 +1,12 @@
+.ProductContent {
+	padding: 40px;
+}
+
+.ProductContent * {
+	margin-bottom: 20px;
+}
+
+.ProductContent-price {
+	font-weight: bold;
+	font-size: 24px;
+}
