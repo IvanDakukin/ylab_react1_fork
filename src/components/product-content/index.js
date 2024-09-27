@@ -8,7 +8,7 @@ import { numberFormat } from '../../utils';
 function ProductContent({ product, onAdd }) {
   const cn = bem('ProductContent');
   const price = numberFormat(product.price);
-  if (Object.keys(product).length == 0) return <div>Загрузка...</div>;
+  if (Object.keys(product).length == 0) return <div className={cn('')}>Загрузка...</div>;
   return (
     <div className={cn()}>
       <div className={cn('description')}>{product.description}</div>
