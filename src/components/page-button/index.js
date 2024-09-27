@@ -19,7 +19,7 @@ function PageButton(props) {
 
 PageButton.propTypes = {
   onClick: PropTypes.func.isRequired,
-  number: PropTypes.oneOfType([PropTypes.any, PropTypes.number]), 
+  number: PropTypes.number.isRequired, 
   isSelected: PropTypes.bool.isRequired,
 };
 

@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { cn as bem } from '@bem-react/classname';
 import './style.css';
+import PropTypes from 'prop-types';
 
 function ProductProperty(props) {
   const cn = bem('ProductProperty');
@@ -11,5 +12,10 @@ function ProductProperty(props) {
     </div>
   );
 }
+
+ProductProperty.PropTypes = {
+  propKey: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType(PropTypes.string, PropTypes.number).isRequired,
+};
 
 export default memo(ProductProperty);
