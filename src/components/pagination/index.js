@@ -24,15 +24,18 @@ function Pagination() {
 
   return (
     <div className={cn()}>
-      {pages.map(pageNumber =>
+      {pages.map((pageNumber, index) =>
         pageNumber ? (
           <PageButton
+            key={index}
             number={pageNumber}
             isSelected={pageNumber == curPage}
             onClick={callbacks.onClick}
           />
         ) : (
-          <span className={cn('divider')}>...</span>
+          <span key={index} className={cn('divider')}>
+            ...
+          </span>
         ),
       )}
     </div>

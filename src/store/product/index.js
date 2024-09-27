@@ -25,7 +25,7 @@ class Product extends StoreModule {
     this.setState({
       ...this.getState(),
       product: {},
-    });
+    }, 'Сброс информации о товаре');
   }
 }
 

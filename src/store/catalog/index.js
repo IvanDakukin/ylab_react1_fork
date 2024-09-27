@@ -18,11 +18,14 @@ class Catalog extends StoreModule {
 
   setPage(page) {
     const { limit } = this.getState();
-    this.setState({
-      ...this.getState(),
-      skip: (page - 1) * limit,
-      page,
-    });
+    this.setState(
+      {
+        ...this.getState(),
+        skip: (page - 1) * limit,
+        page,
+      },
+      'Переключение страницы',
+    );
     this.load();
   }
 
