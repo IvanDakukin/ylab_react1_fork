@@ -1,4 +1,4 @@
-import PropTypes, { number } from 'prop-types';
+import PropTypes from 'prop-types';
 import { memo } from 'react';
 import { cn as bem } from '@bem-react/classname';
 import './style.css';
@@ -19,7 +19,7 @@ function PageButton(props) {
 
 PageButton.propTypes = {
   onClick: PropTypes.func.isRequired,
-  number: PropTypes.number.isRequired, 
+  number: PropTypes.number.isRequired,
   isSelected: PropTypes.bool.isRequired,
 };
 

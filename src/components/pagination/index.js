@@ -1,35 +1,24 @@
-import { memo, useMemo } from 'react';
+import { memo } from 'react';
 import { cn as bem } from '@bem-react/classname';
 import PageButton from '../page-button';
-import useStore from '../../store/use-store';
-import useSelector from '../../store/use-selector';
-import { getPaginationButtons } from '../../utils';
+import PropTypes from 'prop-types';
 import './style.css';
 
-function Pagination() {
-  const store = useStore();
+function Pagination(props) {
   const cn = bem('Pagination');
 
-  const { curPage, limit, count } = useSelector(state => ({
-    curPage: state.catalog.page,
-    limit: state.catalog.limit,
-    count: state.catalog.count,
-  }));
-
   const callbacks = {
-    onClick: page => store.actions.catalog.setPage(page),
+    onClick: page => props.setPage(page),
   };
-
-  const pages = useMemo(() => getPaginationButtons(curPage, limit, count), [curPage, limit, count]);
 
   return (
     <div className={cn()}>
-      {pages.map((pageNumber, index) =>
+      {props.pages.map((pageNumber, index) =>
         pageNumber ? (
           <PageButton
             key={index}
             number={pageNumber}
-            isSelected={pageNumber == curPage}
+            isSelected={pageNumber == props.curPage}
             onClick={callbacks.onClick}
           />
         ) : (
@@ -42,4 +31,9 @@ function Pagination() {
   );
 }
 
+Pagination.PropTypes = {
+  setPage: PropTypes.func.isRequired,
+  curPage: PropTypes.number.isRequired,
+  pages: PropTypes.arrayOf(PropTypes.number).isRequired,
+};
 export default memo(Pagination);
