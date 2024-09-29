@@ -49,8 +49,9 @@ export function getPaginationButtons(page, limit, count) {
   if (pages.indexOf(page) === -1) {
     pages.push(page);
   }
-
-  if (page < pagesCount) {
+  if (page == 1) {
+    pages.push(2, 3);
+  } else if (page < pagesCount) {
     pages.push(page + 1);
   }
 
