@@ -1,0 +1,9 @@
+.Navigation {
+	display: flex;
+	align-items: center;
+}
+
+.Navigation-item {
+	font-size: 18px;
+	color: #0087e9;
+}

@@ -8,6 +8,8 @@ import List from '../../components/list';
 import useStore from '../../store/use-store';
 import useSelector from '../../store/use-selector';
 import { getPaginationButtons } from '../../utils';
+import Navigation from '../../components/navigation';
+import BasketToolLayout from '../../components/basket-tool-layout';
 
 function Main() {
   const store = useStore();
@@ -48,10 +50,15 @@ function Main() {
     [select.page, select.limit, select.count],
   );
 
+  const navItems = [{ title: 'Главная', url: '/' }];
+
   return (
     <PageLayout>
       <Head title="Магазин" />
-      <BasketTool onOpen={callbacks.openModalBasket} amount={select.amount} sum={select.sum} />
+      <BasketToolLayout>
+        <Navigation navItems={navItems} />
+        <BasketTool onOpen={callbacks.openModalBasket} amount={select.amount} sum={select.sum} />
+      </BasketToolLayout>
       <List list={select.list} renderItem={renders.item} />
       <Pagination pages={pages} curPage={select.page} setPage={callbacks.setPage} />
     </PageLayout>
