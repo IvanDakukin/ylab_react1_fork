@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo } from 'react';
 import PropTypes from 'prop-types';
 import { cn as bem } from '@bem-react/classname';
 import { numberFormat } from '../../utils';
@@ -14,7 +14,7 @@ function Item(props) {
 
   return (
     <div className={cn()}>
-      <Link to={`/products/${props.item._id}`} className={cn('title')}>
+      <Link to={props.url} className={cn('title')}>
         {props.item.title}
       </Link>
       <div className={cn('actions')}>
